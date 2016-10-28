@@ -1,0 +1,2 @@
+#!/bin/bash
+/apps/java/jdk_current/bin/java -jar /home/ubuntu/duckcommand/duckcommand.jar $@

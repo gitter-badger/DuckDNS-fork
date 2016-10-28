@@ -1,0 +1,5 @@
+#!/bin/bash
+until /apps/jetty/jetty_run.sh; do
+	echo "Jetty Service Stopped exit code $?. respawning.." >&2
+	sleep 7
+done

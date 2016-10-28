@@ -1,0 +1,1088 @@
+/*
+ * Prevent a tiny bottom-margin appearing below the breadcrumb trail and above
+ * the main title panel in each page. Overrides the CSS rule for OD's
+ * 003-breadcrumb-trail module.
+ */
+@media (min-width: 45em) {
+	.breadcrumb.module {
+		margin: 0;
+	}
+}
+
+
+
+
+/*
+ * Direct Debit logo
+ */
+.direct-debit-logo {
+    background: url("../img/logo_direct_debit.png") no-repeat scroll 95% 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 36px;
+    margin-top: 5px;
+}
+
+
+
+
+/*
+ * Rules to control alignment of "Account", "Phone" and "Last login" items in the
+ * main header pane of each page.
+ */
+.titleHeader .pull-left { margin-bottom: 0; }
+.titleHeader .pull-right {}
+
+@media (max-width: 22.499999em) { /* 320..359ish */
+	.titleHeader .pull-left span {
+		clear: left;
+		float:left;
+		display: none;
+	}
+	.titleHeader .pull-left span:first-child,
+	.titleHeader .pull-left span:last-child {
+		display: inline-block;
+	}
+}
+
+@media (min-width: 22.5em) { /* 360... */
+	.titleHeader .pull-left span {
+		clear: none;
+		float: none;
+		display: inline-block;
+	}
+}
+@media (max-width: 50em) { /* ...800 */
+	.titleHeader .pull-right {
+		float: left;
+		clear: left;
+	}
+}
+
+/*
+ * Tab amendments. Provided dotted horizontal decoration behind tabs. Retain
+ * white colouring of text within tabs, even when that text is the text of an
+ * anchor.
+ */
+.tabs .tabs__tab-list li.tabs__tab--on a {
+	color: white;
+}
+.tabs__tabs-decoration-container .tabs__tab-list li {
+	background-color: #FFFFFF;
+}
+
+/* Media query variations */
+@media (min-width: 45em) { /* 720-...*/
+	/* Dotted horizontal decoration to tabs */
+	.tabs__tabs-decoration-container {
+		border-top: 1px dotted #6D6E71;
+		margin-top: 3.2em;
+		clear: left;
+		text-align: center;
+	}
+
+	/* Adjust position of the tabs on the page to compensate for extreme
+	   positioning values */
+	.tabs__tabs-decoration-container .tabs__tab-list {
+		margin-top: -2.2em;
+	}
+}
+@media (min-width: 75em) { /* 1200-...*/
+	.tabs__tabs-decoration-container {
+		margin-top: 3.5em;
+	}
+	.tabs__tabs-decoration-container .tabs__tab-list {
+   		margin-top: -2.5em;
+	}
+}
+
+@media (max-width: 20.0125em) { /* 321-719 */
+	.tabs__tabs-decoration-container {
+		border-top: none;
+		margin-top: 0;
+	}
+}
+
+
+
+
+/*
+ * Remove the bottom border from the last LI element in a links-list
+ */
+.links-list__links-container li:last-child {
+	border-bottom: none;
+}
+
+
+
+
+/*
+ * Make a button stretch the full-width of its containing column
+ */
+.button.full-width {
+	width: 100%;
+	text-align: center;
+}
+
+
+
+
+/*
+ * Fudge button styles without cta__group
+ */
+.horiz-cta-group {
+    margin: 0;
+    padding: 0;
+}
+.panel .horiz-cta-group--has-H2-Hdr {
+    margin-top: -1.0em;
+}
+.horiz-cta-group:after {
+	content: "";
+	display: table;
+	clear: both;
+	width: 100%;
+}
+.horiz-cta-group__hdr,
+.horiz-cta-group__hdr--short {
+ 	float:left;
+    margin: 0;
+    padding: 0;
+    width: 75%;
+}
+.horiz-cta-group__hdr h2 {
+	display: none;
+}
+
+.horiz-cta-group__hdr--short {
+	width: 30%;
+}
+.horiz-cta-group__cta {
+ 	float: right;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.horiz-cta-group__hdr--short + .horiz-cta-group__cta { margin-top: 0; }
+
+.horiz-cta-group__cta a.button,
+.horiz-cta-group__cta button,
+.horiz-cta-group__cta input[type="reset"],
+.horiz-cta-group__cta input[type="button"],
+.horiz-cta-group__cta input[type="submit"] {
+	margin: 0.2em 0;
+	line-height: normal;
+}
+/* Media query variations */
+@media (max-width: 20.0em) { /* Up to 320px */
+	.horiz-cta-group__hdr,
+	.horiz-cta-group__hdr--short {
+		width: 100%;
+	}
+}
+@media (min-width: 20.0125em) { /* 321-... */
+	.horiz-cta-group__hdr,
+	.horiz-cta-group__hdr--short {
+		width: 100%;
+	}
+}
+@media (min-width: 45em) { /* 720-... */
+	.horiz-cta-group__hdr { width: 65%; }
+	.horiz-cta-group__hdr--short { width: 40%; }
+	.horiz-cta-group__cta { width: auto; margin-top: 1.0em; }
+
+	.horiz-cta-group__hdr h2 { display: block; }
+    .panel .horiz-cta-group__hdr h2 { margin-top: 0.625em; }
+}
+@media (min-width: 48em) { /* 768-... */
+	.horiz-cta-group__hdr { width: 65%; }
+	.horiz-cta-group__cta { width: auto; margin-top: 1.0em; }
+}
+@media (min-width: 50em) { /* 800-... */
+	.horiz-cta-group__hdr { width: 70%; }
+	.horiz-cta-group__cta { width: auto; margin-top: 1.0em; }
+}
+@media (min-width: 64em) { /* 1024-... */
+	.horiz-cta-group__hdr { width: 75%; }
+	.horiz-cta-group__cta { width: auto; margin-top: 0; }
+
+	.panel .horiz-cta-group__hdr h2 { margin-top: 0.15em; }
+}
+@media (min-width: 75em) { /* 1200-...*/
+	.horiz-cta-group__hdr { width: 75%; }
+	.horiz-cta-group__cta { width: auto; }
+	
+	.panel .horiz-cta-group__hdr h2 { margin-top: 0.1625em; }
+}
+
+
+
+
+/*
+ * Align a cta-group button with a select box, immediately adjacent to it's left hand side (e.g. 'viewBill.jsp'). 
+ */
+ .aligned-select-btn-group {}
+ .aligned-select-btn-group--select {}
+ .aligned-select-btn-group--btn {}
+  
+.aligned-select-btn-group--btn {
+    margin-bottom: 1em;
+    margin-top: -1.5em;
+    padding-top: 0;
+}
+
+.aligned-select-btn-group--select label {
+	white-space: nowrap;
+}
+
+@media (min-width: 25em) { /* 400px */
+	.aligned-select-btn-group .span-3 {
+		width: 35%;
+	}
+	.aligned-select-btn-group .span-3:first-child {
+		width: 65%;
+	}
+	.aligned-select-btn-group--btn {
+    	margin-top: 1.6em;
+	}
+}
+@media (min-width: 35em) { /* 560px */
+	.aligned-select-btn-group .span-3,
+	.aligned-select-btn-group .span-3:first-child {
+		width: 25%;
+	}
+	.aligned-select-btn-group--btn {
+    	margin-top: 1.6em;
+	}
+}
+@media (min-width: 40em) { /* 640px */
+	.aligned-select-btn-group .span-3,
+	.aligned-select-btn-group .span-3:first-child {
+		width: 25%;
+	}
+	.aligned-select-btn-group--btn {
+		padding-top: 0.6em;
+    	margin-bottom: inherit;
+    	margin-top: inherit;
+    	margin-right: -1.625em;
+	}
+}
+@media (min-width: 45em) { /* 720px */
+	.aligned-select-btn-group .span-3 {
+		width: 25%;
+	}
+	.aligned-select-btn-group--btn {
+		padding-top: 0.975em;
+    	margin-bottom: inherit;
+    	margin-top: inherit;
+	}
+}
+
+
+
+
+/*
+ * Support for a full-width list of regular anchors that are generally
+ * right-aligned. Responsively split this into two pairs of links that
+ * left-align and right-align as necessary.
+ */
+@media (min-width:20em) { /* 320px */
+	.horizontal-link-list a.pull-right {
+		clear: right;
+		margin-left: 0em;
+	}
+}
+@media (min-width:22.5em) { /* 360px */
+	.horizontal-link-list a.pull-right {
+		clear: none;
+		margin-left: 1.0em;
+	}
+	.horizontal-link-list a.pull-right:nth-child(odd) {
+		clear: left;
+		float:left;
+		margin-left: 0;
+	}
+}
+@media (min-width:40em) { /* 640px */
+	.horizontal-link-list a.pull-right {
+		clear: none;
+		float:right;
+		margin-left: 1.0em;
+	}
+	.horizontal-link-list a.pull-right:nth-child(odd) {
+		clear: none;
+		float: right;
+		margin-left: 1.0em;
+	}
+	.horizontal-link-list a.pull-right:last-child {
+		margin-left: 0;
+	}
+}
+@media (min-width:45em) { /* 720px */
+	.horizontal-link-list a.pull-right {
+		clear: none;
+		margin-left: 1.0em;
+	}
+	.horizontal-link-list a.pull-right:nth-child(odd) {
+		clear: left;
+		float:left;
+		margin-left: 0;
+	}
+}
+@media (min-width:40em) { /* 768px */
+	.horizontal-link-list a.pull-right {
+		clear: none;
+		float:right;
+		margin-left: 1.0em;
+	}
+	.horizontal-link-list a.pull-right:nth-child(odd) {
+		clear: none;
+		float: right;
+		margin-left: 1.0em;
+	}
+	.horizontal-link-list a.pull-right:last-child {
+		margin-left: 0;
+	}
+}
+
+
+
+
+/*
+ * Additional icon font support classes
+ */
+.ee-icon-large--flush-left {
+	font-size: 2.5em;
+	float: left;
+}
+.ee-icon-large--flush-left + div {
+	padding-top: 0.375em;
+	height: 2.5em;
+}
+
+
+
+
+/*
+ * Some override rules for basic helper classes
+ */
+.dashboardLabel {
+	float: left;
+}
+@media (min-width: 45em) {
+	.dashboardLabel {
+		float: right;
+	}
+}
+@media (min-width: 45em) {
+	.msisdnList {
+		float: right;
+	}
+}
+
+.span-6.full-width-span-override {
+	width: 100%;
+}	
+@media (min-width: 45em) {
+	.span-6.full-width-span-override {
+		width: 50%;
+	}
+}
+
+
+
+/*
+ * Try to horizontally align adjacent CTA_GROUPs by floating the first sibling left.
+ */
+.group .cta__group {
+	float: left;
+}
+
+
+
+
+/*
+ * Decorative CSS-only triangles
+ */
+.arrow-aqua,
+.arrow-yellow,
+.arrow-grey,
+.arrow-ivory,
+.arrow-ivory-background,
+.arrow-ivory-light,
+.arrow-white {
+	width: 0; 
+	height: 0;
+	border: 10px solid transparent;
+}
+.arrow-up {
+	border-top: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20px;
+}
+.arrow-up.arrow-aqua             { border-bottom: 10px solid #007b85; }
+.arrow-up.arrow-yellow           { border-bottom: 10px solid #ffe600; }
+.arrow-up.arrow-grey             { border-bottom: 10px solid #6d6e71; }
+.arrow-up.arrow-ivory            { border-bottom: 10px solid #eae3c9; }
+.arrow-up.arrow-ivory-background { border-bottom: 10px solid #f6f4f0; }
+.arrow-up.arrow-ivory-light      { border-bottom: 10px solid #fbfaf8; }
+.arrow-up.arrow-white            { border-bottom: 10px solid white; }
+
+.arrow-down {
+	border-bottom: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20px;
+}
+.arrow-down.arrow-aqua             { border-top: 10px solid #007b85; }
+.arrow-down.arrow-yellow           { border-top: 10px solid #ffe600; }
+.arrow-down.arrow-grey             { border-top: 10px solid #6d6e71; }
+.arrow-down.arrow-ivory            { border-top: 10px solid #eae3c9; }
+.arrow-down.arrow-ivory-background { border-top: 10px solid #f6f4f0; }
+.arrow-down.arrow-ivory-light      { border-top: 10px solid #fbfaf8; }
+.arrow-down.arrow-white            { border-top: 10px solid white; }
+
+.arrow-left {
+	border-left: none;
+}
+.arrow-left.arrow-aqua             { border-right: 10px solid #007b85; }
+.arrow-left.arrow-yellow           { border-right: 10px solid #ffe600; }
+.arrow-left.arrow-grey             { border-right: 10px solid #6d6e71; }
+.arrow-left.arrow-ivory            { border-right: 10px solid #eae3c9; }
+.arrow-left.arrow-ivory-background { border-right: 10px solid #f6f4f0; }
+.arrow-left.arrow-ivory-light      { border-right: 10px solid #fbfaf8; }
+.arrow-left.arrow-white            { border-right: 10px solid white; }
+
+.arrow-right {
+	border-right: none;
+	position: relative;
+	height: 20px;
+	float: right;
+	margin-right: -10px;
+	top: 100px;
+}
+.arrow-right.arrow-aqua             { border-left: 10px solid #007b85; }
+.arrow-right.arrow-yellow           { border-left: 10px solid #ffe600; }
+.arrow-right.arrow-grey             { border-left: 10px solid #6d6e71; }
+.arrow-right.arrow-ivory            { border-left: 10px solid #eae3c9; }
+.arrow-right.arrow-ivory-background { border-left: 10px solid #f6f4f0; }
+.arrow-right.arrow-ivory-light      { border-left: 10px solid #fbfaf8; }
+.arrow-right.arrow-white            { border-left: 10px solid white; }
+
+
+/*
+ * Tab decoration triangle - override default size 
+ */
+.tabs .tabs__tab-list li.tabs__tab--on .tab-list__triangle {
+    border-width: 0.6em;
+}
+
+/*
+ * One True Layout - CSS method for maintaining the illusion of equal-height columns in a grid-based layout.
+ * See: http://css-tricks.com/fluid-width-equal-height-columns/
+ */
+.one-true {
+	overflow: none;
+	margin-bottom: 0.5em;
+}
+.one-true__row {
+	background: transparent;
+}
+.one-true__row .one-true__column {
+	margin-bottom: -10em;
+	padding-bottom: 11em;
+}
+.panels .one-true .panel {
+	margin-bottom: inherit;
+	padding-bottom: inherit;
+}
+.panels .one-true .col .panel:last-child {
+ 	margin-bottom: 0;
+	padding-bottom: 1em;
+}
+
+/*
+ * Media query variations
+ */
+@media (min-width: 20em) and (max-width:22.5em) { /* 320px to 360px */
+	.one-true .col {
+		margin-bottom: 0.5em;
+	}
+	.panels .one-true .panel {
+		margin-bottom: 0;
+		padding-bottom: 0.5em;
+	}
+}
+
+@media (min-width: 35em) { /* 600px */
+	.one-true {
+		overflow: hidden;
+	}
+	.panels .one-true .col.span-6.mod-current-credit .panel,
+	.panels .one-true .col.span-6.mod-current-pack .panel {
+		margin-bottom: -99em;
+		padding-bottom: 100em;
+	}
+}
+
+@media (min-width: 37.5em) { /* 600px */
+	.one-true {
+		overflow: hidden;
+	}
+	.panels .one-true .col.span-6 .panel {
+		margin-bottom: -99em;
+		padding-bottom: 100em;
+	}
+}
+@media (min-width: 45em) { /* 720px */
+	.panels .one-true .col .panel:last-child {
+		margin-bottom: -99em;
+		padding-bottom: 99em;
+	}	
+	.one-true__row .one-true__column {
+		margin-bottom: -10em;
+		padding-bottom: 11.5em;
+	}
+}
+
+@media (min-width: 75em) {
+	.panels .one-true .panel {
+		margin-bottom: -100em;
+		padding-bottom: 102em;
+	}
+}
+
+.one-true__row .one-true__column:last-child {
+	margin-bottom: -10em;
+}
+
+
+
+
+/*
+ * Hide label text in the middle of a data wheel by default (it's faded into visibility via jQuery)
+ */
+.timeUsed,
+.timeTxt {
+	display: none;
+}
+
+
+
+
+/*
+ * Fudgey rules for aligning static, labelled text in a a pseudo-grid way
+ */
+.static-data dl {
+	content: "";
+	display: table;
+	clear: both;
+	width: 100%;
+}
+.static-data dt {
+	float: left;
+	padding: 0 0.75em 0.75em 0;
+	font-weight: bold;
+	text-align: right;
+}
+.static-data dd {
+	padding: 0 0 0.2em 0;
+}
+
+@media (min-width: 15em) {
+	.static-data dt {
+		clear: left;
+		width: 100%;
+		padding: 0 0.75em 0 0;
+		margin: 0;
+		text-align: left;
+	}
+	.static-data dd {
+		clear: left;
+		margin: 0;
+	}
+}
+@media (min-width: 40em) {
+	.static-data dt {
+		clear: left;
+		width: 30%;
+		font-size: 1em;
+		text-align: right;
+	}
+	.static-data dd {
+		clear: none;
+		margin: 0;
+		font-size: 1em;
+	}
+}
+@media (min-width: 60em) {
+	.static-data dt {
+		clear: left;
+		width: 30%;
+		font-size: 1.2em;
+		text-align: right;
+	}
+	.static-data dd {
+		clear: none;
+		margin: 0;
+		font-size: 1.2em;
+	}
+}
+
+
+
+
+/*
+ * Forms element enhancements
+ */
+ 
+ /* Added input[type="number"] rules, missing from base-1.css */
+.ee-form input[type="number"] {
+  padding: .875em .5em;
+  border: 1px solid #d4d3cf;
+  border-radius: 0.25em;
+}
+.ee-form input[type="number"]:focus {
+  border-color: #6d6e71;
+  background-color: #f6f4f0;
+  outline: none;
+}
+.ee-form input.invalid[type="number"] {
+  border-color: #e00000;
+  background-color: #fdf7f7;
+  box-shadow: none;
+}
+.ee-form input.validated[type="number"] {
+  border-color: green;
+}
+@media (min-width: 45em) {
+	.ee-form input[type="number"] {
+		padding: .875em;
+	}
+}
+
+
+/*
+ * Support for a matched-pair of buttons, spanning the full width of the page via two
+ * sibling span-6 columns. 
+ */
+	.cta-button-pair--forward a.button,
+	.cta-button-pair--forward button,
+	.cta-button-pair--forward input[type="reset"],
+	.cta-button-pair--forward input[type="button"],
+	.cta-button-pair--forward input[type="submit"] {
+		margin-right: 0;
+	}
+
+	@media (min-width: 22.5em) { /* 360... */
+		.cta-button-pair--forward {
+			float: none;
+		}
+	}
+
+	@media (min-width: 35em) { /* 502px */
+		.cta-button-pair--forward {
+			float: right;
+		}
+		.cta-button-pair--forward a.button,
+		.cta-button-pair--forward button,
+		.cta-button-pair--forward input[type="reset"],
+		.cta-button-pair--forward input[type="button"],
+		.cta-button-pair--forward input[type="submit"] {
+			margin-right: 0;
+		}
+	}
+
+
+/*
+ * Supports a custom layout whereby a text input field is nested inside
+ * a radio-button item (on the set top-up alerts page)
+ */
+.ee-form-control-wrapper--indented {
+	margin-left: 2.5em;
+}
+
+
+.ee-form--full-page input.sort-code {
+    width: 25%;
+    float: left;
+    margin-right: 0.75em;
+}
+
+@media (max-width: 20em) { /* <= 320 */
+	.ee-form--full-page input.sort-code {
+    	margin-right: 0.25em;
+	}
+	.ee-form-message-wrapper {
+		float:left;
+	}
+}
+@media (min-width: 20em) { /* >= 320 */
+	.ee-form--full-page input.sort-code {
+    	margin-right: 0.5em;
+	}
+	.ee-form-message-wrapper {
+		float:left;
+	}
+}
+@media (min-width: 20.0125em) { /* 321-719 */
+	.ee-form-message-wrapper {
+		float:left;
+	}
+}
+@media (min-width: 45em) { /* 720-760*/
+	.ee-form--full-page input.sort-code {
+    	margin-right: 0.5em;
+	}
+}
+@media (min-width: 47.5em) { /* > 760 */
+	.ee-form--full-page input.sort-code {
+    	margin-right: 0.55em;
+	}
+}
+
+
+
+
+/*
+ * Error block enhancements
+ */
+.error-block--hidden { /* Hide entire error block */
+	display: none;
+}
+.error-block__heading--hidden { /* Hide the heading text in an error message block */
+	display: none;
+}
+
+.error-block__icon--hidden { /* Hide the error icon preceding an error message */
+	display: none;
+}
+
+.error-block__error-list { /* Same as .error-block ul - a list of error messages collated at the top of the form or page */
+	list-style: none;
+	margin-bottom: 0;
+	padding: 0;
+}
+.error-block__error-list--hidden { /* Hide an entire error-list */
+	display: none;
+}
+.error-block ul li,
+.error-block__error-list-item { /* Same as .error-block ul li - a specific error message in an error-block__error-list */
+	list-style-image: none;
+	list-style-type: none;
+	display: block;
+	margin: 1em 0;
+}
+.error-block__error-list-item--hidden,
+.error-block ul li.error-block__error-list-item--hidden { /* Hide a specific error-list-item */
+	display: none;
+}
+
+
+
+
+/* 
+ * Generic, catch-all, non-BEM, massive fudgery "hidden" class
+ */
+.hidden {
+	display: none;
+}
+
+
+
+
+/*
+ * Hard-set 33% width on each Add-On details section within the collapsible section
+ * of My Plan page.
+ */
+.expandable__panel-container {
+	margin: 0;
+	padding-bottom: 0;
+}
+.expandable__panel > div {
+	display: inline-block;
+	width: 100%;
+}
+.expandable__panel-detail {
+	float: left;
+	width: 33.333333%;
+}
+.js .expandable__panel--addonlist {
+	padding-bottom: 0;
+}
+
+
+/* Media query variations */
+@media (max-width: 20.0em) { /* Up to 320px */
+	.expandable__panel .horiz-cta-group {
+		margin-bottom: 1.5em;
+	}
+	.expandable__panel-detail {
+		width: 100%;
+	}
+}
+@media (min-width: 20.0125em) { /* 321-... */
+	.expandable__panel .horiz-cta-group {
+		margin-bottom: 1.5em;
+	}
+	.expandable__panel-detail {
+		width: 50%;
+	}
+}
+@media (min-width: 48em) { /* 768-... */
+	.expandable__panel-detail {
+		width: 33.333333%;
+	}
+}
+@media (min-width: 50em) { /* 800-... */
+	.expandable__panel-detail {
+		width: 33.333333%;
+	}
+}
+@media (min-width: 64em) { /* 1024-... */
+	.expandable__panel-detail {
+		width: 33.333333%;
+	}
+}
+@media (min-width: 75em) { /* 1200-...*/
+	.expandable__panel-detail {
+		width: 33.333333%;
+	}
+}
+
+
+
+.expandable .ee-form-field { margin: 0; }
+
+.ee-form-control--add-on label span {
+	display: block;
+	clear: left;
+}
+.ee-form-field--input-group .ee-form-control--add-on label {
+	color: #6D6E71;
+}
+.ee-form-field--input-group .ee-form-control--add-on label.read-only {
+	color: #D4D3CF;
+}
+
+
+
+
+/*
+ * Dotted table cell top borders, alignment rules
+ */
+.dotted-right {
+    border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: #FFFFFF;
+}
+.datatable.vert-border tbody td { /* Default dotted border color */
+    border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #666666;
+}
+
+.aqua .datatable.vert-border tbody td {
+	border-top-color: #FFFFFF;
+}
+
+.datatable thead th {
+	vertical-align: top;
+}
+.datatable thead th,
+.datatable tbody td {
+    padding: 10px 0;
+    text-align: left;
+}
+.datatable thead th:last-child,
+.datatable tbody td:last-child {
+    text-align: right;
+}
+
+
+
+
+/*
+ * Rules supporting "My Device" page
+ */
+#pnl-manage-phone-opts li {
+    float: left;
+    margin-bottom: 10px;
+}
+#pnl-manage-phone-opts li.unlock-phone {
+    width: 100%;
+}
+#pnl-manage-phone-opts li .icon-img {
+    background: url("../img/ducky-phone-options-sprite-b.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 80px;
+    line-height: 35px;
+    margin: 10px 0;
+    padding-left: 60px;
+}
+#pnl-manage-phone-opts li.content-lock .icon-img {
+    background-position: 0 0 !important;
+}
+#pnl-manage-phone-opts li.puk-code .icon-img {
+    background-position: 0 -105px !important;
+}
+#pnl-manage-phone-opts li.unlock-phone .icon-img {
+    background: url("../img/ducky-phone-options-sprite.png") no-repeat scroll -1px -276px rgba(0, 0, 0, 0);
+}
+#pnl-manage-phone-opts li.visual-voice .icon-img {
+    background-position: 0 -205px !important;
+}
+#pnl-manage-phone-opts li.cash-on-tap .icon-img {
+    background-position: 0 -300px !important;
+}
+#pnl-manage-phone-opts li.visual-voice, #pnl-manage-phone-opts li.cash-on-tap {
+    margin-top: 20px;
+    width: 100%;
+}
+#pnl-manage-phone-opts li.unlock-phone {
+    margin: 10px 0 20px;
+}
+#pnl-manage-phone-opts .puk-btn {
+    border: 1px dotted #6D6E71;
+    cursor: default;
+    float: left;
+    padding: 14px 35px 13px 15px;
+    text-transform: uppercase;
+}
+#pnl-manage-phone-opts li list-btn {
+    float: left;
+    width: 30%;
+}
+#pnl-manage-phone-opts li .list-content {
+    float: left;
+    width: 80%;
+}
+#pnl-manage-phone-opts li div{
+	padding-left: 60px;
+}
+#pnl-manage-phone-opts{
+    list-style-type: none;
+}
+#pnl-manage-phone-opts .puk-btn {
+    border: 1px dotted #6D6E71;
+    cursor: default;
+    float: left;
+    padding: 14px 35px 13px 15px;
+    text-transform: uppercase;
+}
+
+
+
+
+/*
+ * Overrides for OD Module Library implementation of 024--accordion, as at
+ * 2014-03-18. They left the LI bullets in it...
+ *
+ * CDD, 2014-03-20.
+ */
+ul.expandable__panel-container {
+  list-style: none;
+}
+
+
+ul.expandable__panel-container li {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+
+
+
+/*
+ * Overrides for OD Module Library implementation of 120--full-width-promo, as at
+ * 2014-03-18.
+ *
+ * For some reason the local copy of the module requires an override to set the
+ * promo image top padding to zero. This is not required in the OD module
+ * library proper, but I can't figure out why - the override resolves the local
+ * issue though.
+ *
+ * CDD, 2014-03-20.
+ */
+.page-heading-promo__image--wide,
+.page-heading-promo__image--extra-wide {
+    padding-top: 0;
+}
+
+
+
+
+/*
+ * Misc generic rules
+ */
+.verySmall {
+	font-size: 0.5em;
+}
+
+
+
+
+/********************************************
+GLOBAL HANDLES FOR MARGIN - PADDING STRIPPING
+*********************************************/
+
+.no-margin {
+	margin:0 !important;
+}
+.no-margin-top {
+	margin-top:0 !important;
+}
+.no-margin-right {
+	margin-right:0 !important;
+}
+.no-margin-bottom {
+	margin-bottom:0 !important;
+}
+.no-margin-left {
+	margin-left:0 !important;
+}
+
+.no-padding {
+	padding:0 !important;
+}
+.no-padding-top {
+	padding-top:0 !important;
+}
+.no-padding-right {
+	padding-right:0 !important;
+}
+.no-padding-bottom {
+	padding-bottom:0 !important;
+}
+.no-padding-left {
+	padding-left:0 !important;
+}
+
+/************************************
+ADDITIONAL REQUIRED GLOBAL ATTRIBUTES
+*************************************/
+
+hr {
+	border:none;
+	border-bottom: 1px dotted #666;
+}
+
+.text-align-right {
+	text-align: right	
+}
+
+.display-table {
+	display: table
+}
+.table-cell {
+	display: table-cell;
+	vertical-align: top
+}
+
+/*******************************************
+TO BE REMOVED ONCE GLOBAL FIXES ARE IN PLACE
+********************************************/
+
+#main .styled-select select {
+	background-color:rgba(255, 255, 255, 1 );
+}

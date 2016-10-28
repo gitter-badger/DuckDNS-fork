@@ -1,0 +1,12 @@
+sudo su
+vi /etc/network/if-up.d/secure-rmc
+
+iptables -A INPUT -s $NETMASK -i $IFACE -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -i $IFACE -j ACCEPT
+iptables -A INPUT -p udp --dport 22 -i $IFACE -j ACCEPT
+iptables -A INPUT -i $IFACE -j DROP
+
+
+sudo apt-get update
+sudo apt-get install curl
+sudo reboot now

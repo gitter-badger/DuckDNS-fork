@@ -1,0 +1,4 @@
+#!/bin/bash
+gzip /apps/backups/*.csv
+/home/ubuntu/quack backupDomains /apps/backups/domains_`date +%F`.csv
+/home/ubuntu/quack backupAccounts /apps/backups/accounts_`date +%F`.csv

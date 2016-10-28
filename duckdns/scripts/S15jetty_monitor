@@ -1,0 +1,8 @@
+echo "*************************************"
+USERNAME_REQUIRED="root"
+if [ `whoami` != $USERNAME_REQUIRED ]; then
+        echo "Not running as $USERNAME_REQUIRED"
+        exit 1
+fi
+export JETTY_JAVA_CONTROL=/apps/jetty
+nohup sh ${JETTY_JAVA_CONTROL}/jetty_monitor > ${JETTY_JAVA_CONTROL}/jettymonitor.log &

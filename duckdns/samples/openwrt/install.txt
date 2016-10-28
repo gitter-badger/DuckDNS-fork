@@ -1,0 +1,9 @@
+opkg update
+opkg install ddns-scripts
+
+ddns-scripts
+
+sh
+. /usr/lib/ddns/dynamic_dns_functions.sh # note the leading period
+start_daemon_for_all_ddns_sections "wan"
+exit

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?> 
+<project name="localsetup" default="setup-dns">
+	
+	<target name="setup-dynamodb">
+		<copydir dest="/apps/dynamodb" src="resources/dynamodb"></copydir>
+		<chmod perm="+x" file="/apps/dynamodb/DynamoDBLocal.jar"></chmod>
+	</target>
+	
+	<target name="setup-dns">
+		<copyfile forceoverwrite="true" dest="/apps/dnsjava/dnsjava_run.sh" src="resources/dnsserver/dnsjava_run.sh"/>
+		<copyfile forceoverwrite="true" dest="/apps/dnsjava/conf/duckdns.org-local" src="resources/dnsserver/duckdns.org-local"/>
+		<copyfile forceoverwrite="true" dest="/apps/dnsjava/DuckDnsServer.conf" src="resources/dnsserver/DuckDnsServer.conf"/>
+		<chmod perm="+x" file="/apps/dnsjava/dnsjava_run.sh"></chmod>
+		<copy overwrite="true" todir="/apps/dnsjava" flatten="true">
+		    <fileset dir="../dnsjava/lib">
+		        <include name="**/*.jar"/>
+		    </fileset>
+		</copy>
+		<copyfile forceoverwrite="true" dest="/apps/dnsjava/DuckDnsServer.jar" src="../dnsjava/dist/DuckDnsServer.jar"/>
+		<copyfile forceoverwrite="true" dest="/apps/dnsjava/AwsCredentials.properties"  src="../dnsjava/src/AwsCredentials.properties"/>
+	</target>
+	
+</project>

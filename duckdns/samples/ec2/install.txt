@@ -1,0 +1,5 @@
+chmod +x duck.sh
+chmod +x duck_daemon.sh
+sudo chown root duck_daemon.sh
+sudo chmod 744 duck_daemon.sh
+sudo ln -s /home/ubuntu/duckdns/duck_daemon.sh /etc/rc2.d/S10duckdns

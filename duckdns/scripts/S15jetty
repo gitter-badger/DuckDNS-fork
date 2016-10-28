@@ -1,0 +1,9 @@
+echo "*************************************"
+echo "JETTY APPLICATION SERVER START SCRIPT" 
+echo "*************************************"
+USERNAME_REQUIRED="root"
+if [ `whoami` != $USERNAME_REQUIRED ]; then
+	echo "Not running as $USERNAME_REQUIRED"
+	exit 1
+fi
+export PATH=/apps/java/jdk_current/bin:${PATH};export JAVA_HOME=/apps/java/jdk_current;export JETTY_USER=jetty;export JETTY_HOME=/apps/jetty/jetty_current;export JAVA_OPTIONS="-d64 -server -Xms400m -Xmx400m";export JETTY_PORT=8080;export JETTY_RUN=${JETTY_HOME}/run;export LANG=en_GB.ISO8859-1; ${JETTY_HOME}/bin/jetty.sh $@ > /apps/jetty/jetty_current/logs/jetty_startup.log

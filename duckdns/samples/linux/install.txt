@@ -1,0 +1,3 @@
+chmod +x duck.sh
+chmod +x duck_daemon.sh
+sudo ln -s /home/douglas/duckdns/duck_daemon.sh /etc/rc2.d/S10duckdns

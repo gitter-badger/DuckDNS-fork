@@ -1,0 +1,5 @@
+#!/bin/bash
+until /apps/dnsjava/dnsjava_test.sh; do
+	echo "DNS Server stopped exit code $?. respawning.." >&2
+	sleep 1
+done

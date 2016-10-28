@@ -1,0 +1,11 @@
+duckdns.org. IN    SOA   ns1.duckdns.org.  hostmaster.duckdns.org.  (
+                                        2014090702    ; Serial
+                                        100M     ; Refresh
+                                        2M    ; Retry
+                                        2419200     ; Expiry
+                                        10M )   ; Minimum
+@                       IN      NS      ns1.duckdns.org.
+@                       IN      A       127.0.0.1
+ns1                     IN      A       127.0.0.1
+mx                      IN      A       127.0.0.1
+duckdns.org.            IN      MX      10 mx.duckdns.org.

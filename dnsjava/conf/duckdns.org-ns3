@@ -1,0 +1,16 @@
+duckdns.org. IN    SOA   ns3.duckdns.org.  hostmaster.duckdns.org.  (
+                                        2016050101    ; Serial
+                                        100M     ; Refresh
+                                        2M    ; Retry
+                                        2419200     ; Expiry
+                                        10M )   ; Minimum
+@                       IN      NS      ns3.duckdns.org.
+@                       IN      NS      ns1.duckdns.org.
+@                       IN      NS      ns2.duckdns.org.
+@                       IN      A       52.26.169.94
+www                     IN      CNAME   duckdns-1862848723.us-west-2.elb.amazonaws.com.
+ns1                     IN      A       54.187.92.222
+ns2                     IN      A       54.191.117.119
+ns3                     IN      A       52.26.169.94
+mx                      IN      A       54.191.117.119
+duckdns.org.            IN      MX      10 mx.duckdns.org.

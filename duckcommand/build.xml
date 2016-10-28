@@ -1,0 +1,10 @@
+<project name="Duck Command" default="copy-secrets" basedir=".">
+	<property name="secret_dir" value="${basedir}/secret"/>
+	<property name="ext_secret_dir" value="../secrets"/>
+	<property name="version" value="1.0"/>
+	
+	<target name="copy-secrets" description="Copies secrets in" depends="">
+		<copyfile forceoverwrite="true" dest="${secret_dir}/AwsCredentials.properties" src="${ext_secret_dir}/aws/AwsCredentials.properties"/>
+		<copyfile forceoverwrite="true" dest="${secret_dir}/secrets.properties" src="${ext_secret_dir}/command/secrets.properties"/>
+	</target>
+</project>
